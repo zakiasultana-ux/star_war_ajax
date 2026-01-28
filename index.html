@@ -12,14 +12,129 @@
 
 </head>
 <body>
+    <h1 class="hidden">Star Wars</h1>
+    <div class="starfield"></div>
     <header>
-        <h1>Star Wars</h1>
+        <nav>
+        <div class="nav-left">
+            <a href="#home">Home</a>
+            <a href="#characters">Characters</a>
+            <a href="#missions">Missions</a>
+            <a href="#galaxy">Galaxy</a>
+        </div>
+        <div class="logo">
+            <img src="/images/star-wars-logo-png.png" alt="star wars logo">
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn">Search</button>
+            <button class="nav-btn">Join Force</button>
+        </div>
+    </nav>
+
     </header>
     <main>
+         <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">Now Live</div>
+            <h2 class="hero-title">Introducing<br>Star Wars Characters</h2>
+            <p class="hero-description">
+                From the depths of the Unknown Regions, a legend emerges. Wielding ancient techniques and possessing wisdom beyond measure, this guardian brings hope to a galaxy on the brink of darkness.
+            </p> 
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+   <section class="character-section" id="characters">
+    <h2 class="section-title">Heroes to Command</h2>
+    <div class="character-grid" id="characterGrid"></div>
+</section>
+<template id="characterCardTemplate">
+    <div class="character-card">
+        <div class="character-image">
+            image of the charactere will come here 
+        </div>
+        <div class="character-info">
+            <div class="character-name"></div>
+        </div>
+    </div>
+</template>
+
+    <section class="character-detail" id="character-lightbox">
+        <div class="lightbox-overlay"></div>
+        <button class="lightbox-close" aria-label="Close lightbox">×</button>
         
+        <div class="lightbox-content">
+            <div class="glow-orb glow-orb-1"></div>
+            <div class="glow-orb glow-orb-2"></div>
+            
+            <div class="detail-container">
+                <div class="detail-image">
+                    <div id="lightbox-character-image"></div>
+                </div>
+                
+                <div class="detail-content">
+                    <div class="detail-header">
+                        <div class="detail-label">Character Select</div>
+                        <h2 class="detail-title" id="lightbox-character-name">Kira Valeron</h2>
+                    </div>
+                    
+                    <p class="detail-description" id="lightbox-character-description">
+                        A master of both combat and diplomacy, Kira has walked the path between light and shadow. Her connection to the Living Force grants her unique insight into the future, making her an invaluable strategist in the struggle against tyranny.
+                    </p>
+                    
+                    <div class="detail-features">
+                        <div class="feature-item">
+                            <div class="feature-title" id="lightbox-feature1-title">Force Mastery</div>
+                            <div class="feature-text" id="lightbox-feature1-text">
+                                Wields both offensive and defensive Force abilities with unparalleled precision, including Force Shield and Lightning Storm techniques.
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-title" id="lightbox-feature2-title">Dual Lightsabers</div>
+                            <div class="feature-text" id="lightbox-feature2-text">
+                                Expert in Jar'Kai combat form, wielding twin azure-blade lightsabers forged from kyber crystals of Ilum.
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-title" id="lightbox-feature3-title">Battle Meditation</div>
+                            <div class="feature-text" id="lightbox-feature3-text">
+                                Can coordinate entire squadrons through the Force, boosting allies' morale and tactical awareness across the battlefield.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rating">
+                        <span class="rating-label">Power Level:</span>
+                        <div class="stars" id="lightbox-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="social-link" id="lightbox-social-link">holocron.com/valeron</a>
+        </div>
+    </section>
     </main>
     <footer>
-
+        <div class="banner-scroll">
+            <div class="banner-content">
+                <span class="banner-item">★ New Character Unlocked</span>
+                <span class="banner-item">★ Exclusive Mission Available</span>
+                <span class="banner-item">★ Limited Time Event</span>
+                <span class="banner-item">★ Legendary Lightsaber Unlocked</span>
+                <span class="banner-item">★ New Character Unlocked</span>
+                <span class="banner-item">★ Exclusive Mission Available</span>
+                <span class="banner-item">★ Limited Time Event</span>
+                <span class="banner-item">★ Legendary Lightsaber Unlocked</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

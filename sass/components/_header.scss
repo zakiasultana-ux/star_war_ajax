@@ -1,0 +1,138 @@
+@use '../abstracts';
+
+header {
+    background-color: rgba(abstracts.$secondary-color, 0.9);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+
+    .logo {
+        text-align: center;
+        margin-bottom: 1rem;
+
+        a {
+            display: inline-block;
+
+            img {
+                width: 120px;
+                height: auto;
+                transition: transform 0.3s ease;
+                filter: invert(100%);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        @media screen and (min-width: abstracts.$tablet) {
+            text-align: left;
+            margin-bottom: 0;
+
+            a {
+                img {
+                    width: 150px;
+                }
+            }
+        }
+
+        @media screen and (min-width: abstracts.$desktop) {
+            a {
+                img {
+                    width: 180px;
+                }
+            }
+        }
+    }
+
+    nav {
+        margin-left: 80%;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+
+            li {
+                a {
+                    color: abstracts.$text-color;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    padding: 0.5rem 1rem;
+                    display: block;
+                    transition: all 0.3s ease;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: 0;
+                        height: 2px;
+                        background-color: abstracts.$primary-color;
+                        transition: all 0.3s ease;
+                        transform: translateX(-50%);
+                    }
+
+                    &:hover {
+                        color: abstracts.$primary-color;
+
+                        &::after {
+                            width: 80%;
+                        }
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+                }
+            }
+
+            @media screen and (min-width: abstracts.$tablet) {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
+
+                li {
+                    a {
+                        font-size: 0.95rem;
+                        padding: 0.5rem 0.75rem;
+                    }
+                }
+            }
+
+            @media screen and (min-width: abstracts.$desktop) {
+                justify-content: flex-end;
+                gap: 2rem;
+
+                li {
+                    a {
+                        font-size: 1rem;
+                        padding: 0.5rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (min-width: abstracts.$tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

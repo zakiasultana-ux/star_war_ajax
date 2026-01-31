@@ -1,0 +1,218 @@
+@use '../abstracts';
+
+footer {
+  background: linear-gradient(to bottom, abstracts.$secondary-color, abstracts.$footer-bg);
+  color: abstracts.$text-color;
+  padding: 2rem 0 1rem;
+  margin-top: 3rem;
+  border-top: 2px solid abstracts.$primary-color;
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+
+    @media screen and (min-width: abstracts.$tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    @media screen and (min-width: abstracts.$desktop) {
+      gap: 3rem;
+    }
+
+    .footer-section {
+      flex: 1;
+      text-align: center;
+
+      @media screen and (min-width: abstracts.$tablet) {
+        text-align: left;
+      }
+
+      h3 {
+        color: abstracts.$primary-color;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50px;
+          height: 2px;
+          background-color: abstracts.$primary-color;
+
+          @media screen and (min-width: abstracts.$tablet) {
+            left: 0;
+            transform: translateX(0);
+          }
+        }
+
+        @media screen and (min-width: abstracts.$tablet) {
+          font-size: 1.15rem;
+        }
+
+        @media screen and (min-width: abstracts.$desktop) {
+          font-size: 1.3rem;
+        }
+      }
+
+      p {
+        color: abstracts.$text-muted;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+
+        @media screen and (min-width: abstracts.$tablet) {
+          font-size: 0.9rem;
+        }
+
+        @media screen and (min-width: abstracts.$desktop) {
+          font-size: 1rem;
+        }
+      }
+
+      nav {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin-bottom: 0.75rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            a {
+              color: abstracts.$text-muted;
+              text-decoration: none;
+              font-size: 0.95rem;
+              transition: all 0.3s ease;
+              display: inline-block;
+              position: relative;
+
+              &::before {
+                content: '→';
+                position: absolute;
+                left: -20px;
+                opacity: 0;
+                transition: all 0.3s ease;
+                color: abstracts.$primary-color;
+              }
+
+              &:hover {
+                color: abstracts.$primary-color;
+                transform: translateX(5px);
+
+                @media screen and (min-width: abstracts.$tablet) {
+                  &::before {
+                    opacity: 1;
+                  }
+                }
+              }
+
+              @media screen and (min-width: abstracts.$tablet) {
+                font-size: 0.9rem;
+              }
+
+              @media screen and (min-width: abstracts.$desktop) {
+                font-size: 0.95rem;
+              }
+            }
+          }
+        }
+      }
+
+      // Social links styling
+      &:last-child {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin-bottom: 0.75rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            a {
+              color: abstracts.$text-muted;
+              text-decoration: none;
+              font-size: 0.95rem;
+              transition: all 0.3s ease;
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+
+              &::before {
+                content: '★';
+                color: abstracts.$primary-color;
+                font-size: 0.8rem;
+                transition: transform 0.3s ease;
+              }
+
+              &:hover {
+                color: abstracts.$primary-color;
+                transform: translateX(5px);
+
+                &::before {
+                  transform: rotate(72deg);
+                }
+              }
+
+              @media screen and (min-width: abstracts.$tablet) {
+                font-size: 0.9rem;
+              }
+
+              @media screen and (min-width: abstracts.$desktop) {
+                font-size: 0.95rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid abstracts.$footer-border;
+    padding-top: 1.5rem;
+    text-align: center;
+
+    p {
+      color: abstracts.$text-muted;
+      font-size: 0.85rem;
+      margin: 0;
+      letter-spacing: 0.5px;
+
+      @media screen and (min-width: abstracts.$tablet) {
+        font-size: 0.875rem;
+      }
+
+      @media screen and (min-width: abstracts.$desktop) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Additional hover effects for footer
+footer {
+  a {
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

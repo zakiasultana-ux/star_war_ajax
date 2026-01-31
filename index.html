@@ -1,140 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Wars</title>
-    
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/grid.css" type="text/css">
 
     <script src="/js/script.js" defer type="module"></script>
 
 </head>
+
 <body>
     <h1 class="hidden">Star Wars</h1>
     <div class="starfield"></div>
-    <header>
-        <nav>
-        <div class="nav-left">
-            <a href="#home">Home</a>
-            <a href="#characters">Characters</a>
-            <a href="#missions">Missions</a>
-            <a href="#galaxy">Galaxy</a>
+    <header class="grid-con">
+        <div class="col-span-2 m-col-span-2 l-col-span-2">
+            <div class="logo">
+                <a href="#home">
+                    <img src="/images/star-wars-logo-png.png" alt="Star Wars Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="logo">
-            <img src="/images/star-wars-logo-png.png" alt="star wars logo">
-        </div>
-        <div class="nav-right">
-            <button class="nav-btn">Search</button>
-            <button class="nav-btn">Join Force</button>
-        </div>
-    </nav>
-
     </header>
-    <main>
-         <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">Now Live</div>
-            <h2 class="hero-title">Introducing<br>Star Wars Characters</h2>
-            <p class="hero-description">
-                From the depths of the Unknown Regions, a legend emerges. Wielding ancient techniques and possessing wisdom beyond measure, this guardian brings hope to a galaxy on the brink of darkness.
-            </p> 
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
+    <main class="grid-con">
+        <!-- Hero Section -->
+        <section class="hero col-span-2 m-col-span-2 l-col-span-2" id="home">
+            <div class="hero-content">
+                <h2>A Galaxy Far, Far Away</h2>
+                <p>Explore the iconic moments from the Star Wars saga</p>
+                <a href="#gallery" class="hero-btn">View Gallery</a>
+            </div>
+        </section>
 
-   <section class="character-section" id="characters">
-    <h2 class="section-title">Heroes to Command</h2>
-    <div class="character-grid" id="characterGrid"></div>
-</section>
-<template id="characterCardTemplate">
-    <div class="character-card">
-        <div class="character-image">
-            image of the charactere will come here 
-        </div>
-        <div class="character-info">
-            <div class="character-name"></div>
+        <!-- Gallery Section -->
+        <section class="gallery-section col-span-2 m-col-span-2 l-col-span-2" id="gallery">
+            <h2>The Saga Collection</h2>
+            <div class="gallery">
+
+            </div>
+        </section>
+    </main>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&#10094;</button>
+            <img id="lightbox-image" src="#" alt="">
+            <button class="lightbox-next">&#10095;</button>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
     </div>
-</template>
-
-    <section class="character-detail" id="character-lightbox">
-        <div class="lightbox-overlay"></div>
-        <button class="lightbox-close" aria-label="Close lightbox">×</button>
-        
-        <div class="lightbox-content">
-            <div class="glow-orb glow-orb-1"></div>
-            <div class="glow-orb glow-orb-2"></div>
-            
-            <div class="detail-container">
-                <div class="detail-image">
-                    <div id="lightbox-character-image"></div>
-                </div>
-                
-                <div class="detail-content">
-                    <div class="detail-header">
-                        <div class="detail-label">Character Select</div>
-                        <h2 class="detail-title" id="lightbox-character-name">Kira Valeron</h2>
-                    </div>
-                    
-                    <p class="detail-description" id="lightbox-character-description">
-                        A master of both combat and diplomacy, Kira has walked the path between light and shadow. Her connection to the Living Force grants her unique insight into the future, making her an invaluable strategist in the struggle against tyranny.
-                    </p>
-                    
-                    <div class="detail-features">
-                        <div class="feature-item">
-                            <div class="feature-title" id="lightbox-feature1-title">Force Mastery</div>
-                            <div class="feature-text" id="lightbox-feature1-text">
-                                Wields both offensive and defensive Force abilities with unparalleled precision, including Force Shield and Lightning Storm techniques.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-title" id="lightbox-feature2-title">Dual Lightsabers</div>
-                            <div class="feature-text" id="lightbox-feature2-text">
-                                Expert in Jar'Kai combat form, wielding twin azure-blade lightsabers forged from kyber crystals of Ilum.
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-title" id="lightbox-feature3-title">Battle Meditation</div>
-                            <div class="feature-text" id="lightbox-feature3-text">
-                                Can coordinate entire squadrons through the Force, boosting allies' morale and tactical awareness across the battlefield.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="rating">
-                        <span class="rating-label">Power Level:</span>
-                        <div class="stars" id="lightbox-rating">
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                    </div>
-                </div>
+    <footer class="grid-con">
+        <div class="footer-content col-span-2 m-col-span-2 l-col-span-2">
+            <div class="footer-section">
+                <h3>About Star Wars</h3>
+                <p>Explore the epic space saga that has captured hearts across generations. May the Force be with you.
+                </p>
             </div>
-            
-            <a href="#" class="social-link" id="lightbox-social-link">holocron.com/valeron</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                </nav>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
-    </main>
-    <footer>
-        <div class="banner-scroll">
-            <div class="banner-content">
-                <span class="banner-item">★ New Character Unlocked</span>
-                <span class="banner-item">★ Exclusive Mission Available</span>
-                <span class="banner-item">★ Limited Time Event</span>
-                <span class="banner-item">★ Legendary Lightsaber Unlocked</span>
-                <span class="banner-item">★ New Character Unlocked</span>
-                <span class="banner-item">★ Exclusive Mission Available</span>
-                <span class="banner-item">★ Limited Time Event</span>
-                <span class="banner-item">★ Legendary Lightsaber Unlocked</span>
-            </div>
+        <div class="footer-bottom col-span-2 m-col-span-2 l-col-span-2">
+            <p>&copy; 2026 Star Wars Gallery. All rights reserved. May the Force be with you.</p>
         </div>
     </footer>
+
 </body>
+
 </html>

@@ -1,0 +1,231 @@
+@use '../abstracts';
+
+.lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(44, 44, 44, 0.9) 100%);
+            border: 3px solid var(--primary-yellow);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(255, 232, 31, 0.3);
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 232, 31, 0.2);
+            border: 2px solid var(--primary-yellow);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-yellow);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            background: var(--primary-yellow);
+            color: var(--space-black);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-header {
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            border-bottom: 2px solid rgba(255, 232, 31, 0.3);
+        }
+
+        .lightbox-image {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid rgba(255, 232, 31, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-main-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .lightbox-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 232, 31, 0.4);
+        }
+
+        .lightbox-subtitle {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .detail-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-yellow);
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            color: var(--star-white);
+            font-weight: bold;
+        }
+
+        .lightbox-body {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 232, 31, 0.3);
+            border-bottom: 2px solid rgba(255, 232, 31, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .films-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .film-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 232, 31, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .film-card:hover {
+            border-color: var(--primary-yellow);
+            background: rgba(255, 232, 31, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .film-episode {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .film-title {
+            font-size: 1rem;
+            color: var(--star-white);
+            font-weight: bold;
+        }
+
+        .additional-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 232, 31, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .info-box h4 {
+            color: var(--primary-yellow);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 5px 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .loading-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .loading-container.active {
+            display: flex;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 232, 31, 0.1);
+            border-top: 4px solid var(--primary-yellow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            color: var(--primary-yellow);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }

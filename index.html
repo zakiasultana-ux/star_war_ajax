@@ -26,16 +26,16 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main class="grid-con">
         <!-- Hero Section -->
-        <section class="hero col-span-2 m-col-span-2 l-col-span-2" id="home">
+        <section class="hero col-span-full m-col-span-full l-col-span-full" id="home">
             <div class="hero-content">
                 <h2>A Galaxy Far, Far Away</h2>
                 <p>Explore the iconic moments from the Star Wars saga</p>
@@ -44,25 +44,97 @@
         </section>
 
         <!-- Gallery Section -->
-        <section class="gallery-section col-span-2 m-col-span-2 l-col-span-2" id="gallery">
-            <h2>The Saga Collection</h2>
-            <div class="gallery">
-
+        <section class="gallery-section col-span-full m-col-span-full l-col-span-full" id="gallery">
+            <div class="characters-grid-section">
+            <h2>Select a Character</h2>
+            
+            <div class="loading-container" id="loadingContainer">
+                <div class="loader"></div>
+                <p class="loading-text">Loading characters...</p>
             </div>
+
+            <div class="characters-grid" id="charactersGrid">
+                <!-- Character cards will be populated here -->
+            </div>
+        </div>
         </section>
     </main>
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close">&times;</button>
-            <button class="lightbox-prev">&#10094;</button>
-            <img id="lightbox-image" src="#" alt="">
-            <button class="lightbox-next">&#10095;</button>
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content" id="lightboxContent">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <!-- Lightbox content will be populated here -->
         </div>
     </div>
+     <!-- Template for character card -->
+    <template id="characterCardTemplate">
+        <div class="character-card">
+            <img class="character-image" alt="Character">
+            <div class="character-info">
+                <div class="character-name"></div>
+                <div class="character-gender"></div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template for lightbox -->
+    <template id="lightboxTemplate">
+        <div class="lightbox-header">
+            <img class="lightbox-image" alt="Character">
+            <div class="lightbox-main-info">
+                <h2 class="lightbox-title"></h2>
+                <p class="lightbox-subtitle"></p>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">Height</div>
+                        <div class="detail-value" id="detailHeight"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Mass</div>
+                        <div class="detail-value" id="detailMass"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Hair Color</div>
+                        <div class="detail-value" id="detailHair"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Eye Color</div>
+                        <div class="detail-value" id="detailEyes"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Birth Year</div>
+                        <div class="detail-value" id="detailBirth"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Gender</div>
+                        <div class="detail-value" id="detailGender"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightbox-body">
+            <h3 class="section-title">Films</h3>
+            <div class="films-grid" id="filmsGrid"></div>
+            
+            <h3 class="section-title">Additional Information</h3>
+            <div class="additional-info">
+                <div class="info-box">
+                    <h4>Homeworld</h4>
+                    <p id="homeworldInfo">Loading...</p>
+                </div>
+                <div class="info-box">
+                    <h4>Vehicles</h4>
+                    <ul class="info-list" id="vehiclesList"></ul>
+                </div>
+                <div class="info-box">
+                    <h4>Starships</h4>
+                    <ul class="info-list" id="starshipsList"></ul>
+                </div>
+            </div>
+        </div>
+    </template>
     <footer class="grid-con">
-        <div class="footer-content col-span-2 m-col-span-2 l-col-span-2">
+        <div class="footer-content col-span-full m-col-span-full l-col-span-full">
             <div class="footer-section">
                 <h3>About Star Wars</h3>
                 <p>Explore the epic space saga that has captured hearts across generations. May the Force be with you.
@@ -89,7 +161,7 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom col-span-2 m-col-span-2 l-col-span-2">
+        <div class="footer-bottom col-span-full m-col-span-full l-col-span-full">
             <p>&copy; 2026 Star Wars Gallery. All rights reserved. May the Force be with you.</p>
         </div>
     </footer>

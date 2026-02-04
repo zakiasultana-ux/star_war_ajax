@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/grid.css" type="text/css">
 
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js" defer type="module"></script>
 
 </head>
 
@@ -45,18 +45,17 @@
 
         <!-- Gallery Section -->
         <section class="gallery-section col-span-full m-col-span-full l-col-span-full" id="gallery">
-            <h2>Select a Character</h2>
-            <div class="characters-grid-section col-span-2 m-col-span-4 l-col-span-4">
-                <div class="loading-container" id="loadingContainer">
-                    <div class="loader"></div>
-                    <p class="loading-text">Loading characters...</p>
-                </div>
-
-                <div class="characters-grid" id="charactersGrid">
-                    <!-- Character cards will be populated here -->
-                </div>
+        <h2>Select a Character</h2>
+        <div class="characters-grid-section col-span-2 m-col-span-4 l-col-span-4">
+            <div class="loading-container" id="loadingContainer">
+                <div class="loader"></div>
+                <p class="loading-text">Loading characters...</p>
             </div>
-        </section>
+            <div class="characters-grid" id="charactersGrid">
+                <!-- Character cards will be populated here -->
+            </div>
+        </div>
+    </section>
     </main>
     <!-- Lightbox -->
     <div class="lightbox-overlay" id="lightboxOverlay">

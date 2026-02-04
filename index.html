@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/grid.css" type="text/css">
 
-    <script src="/js/script.js" defer type="module"></script>
+    <script src="/js/script.js"></script>
 
 </head>
 
@@ -45,18 +45,17 @@
 
         <!-- Gallery Section -->
         <section class="gallery-section col-span-full m-col-span-full l-col-span-full" id="gallery">
-            <div class="characters-grid-section">
             <h2>Select a Character</h2>
-            
-            <div class="loading-container" id="loadingContainer">
-                <div class="loader"></div>
-                <p class="loading-text">Loading characters...</p>
-            </div>
+            <div class="characters-grid-section col-span-2 m-col-span-4 l-col-span-4">
+                <div class="loading-container" id="loadingContainer">
+                    <div class="loader"></div>
+                    <p class="loading-text">Loading characters...</p>
+                </div>
 
-            <div class="characters-grid" id="charactersGrid">
-                <!-- Character cards will be populated here -->
+                <div class="characters-grid" id="charactersGrid">
+                    <!-- Character cards will be populated here -->
+                </div>
             </div>
-        </div>
         </section>
     </main>
     <!-- Lightbox -->
@@ -66,7 +65,7 @@
             <!-- Lightbox content will be populated here -->
         </div>
     </div>
-     <!-- Template for character card -->
+    <!-- Template for character card -->
     <template id="characterCardTemplate">
         <div class="character-card">
             <img class="character-image" alt="Character">
@@ -115,7 +114,7 @@
         <div class="lightbox-body">
             <h3 class="section-title">Films</h3>
             <div class="films-grid" id="filmsGrid"></div>
-            
+
             <h3 class="section-title">Additional Information</h3>
             <div class="additional-info">
                 <div class="info-box">
@@ -143,12 +142,12 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </nav>
             </div>
             <div class="footer-section">

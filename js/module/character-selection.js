@@ -4,8 +4,8 @@ import { fetchFilm } from './api.js';
 
 const moviePosterMap = {
   1: 'images/1.jpeg',
-  2: 'images/star-wars-logo-png.png',
-  3: 'images/star-wars-logo-png.png',
+  2: 'images/2.webp',
+  3: 'images/3.webp',
   4: 'images/4.jpg',
   5: 'images/5.jpg',
   6: 'images/6.jpg'

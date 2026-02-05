@@ -1,5 +1,6 @@
 export function createCharacterCard(character, onSelectCallback) {
-  const characterCardTemplate = document.getElementById('characterCardTemplate');
+  // I'm creating a character card from the template
+  const characterCardTemplate = document.querySelector('#characterCardTemplate');
   const templateClone = characterCardTemplate.content.cloneNode(true);
   
   const characterCard = templateClone.querySelector('.character-card');
@@ -14,9 +15,12 @@ export function createCharacterCard(character, onSelectCallback) {
   
   characterCard.dataset.characterId = character.id;
   
-  characterCard.addEventListener('click', function() {
+  function handleCardClick() {
+    // I'm triggering the selection callback when the card is clicked
     onSelectCallback(character);
-  });
+  }
+  
+  characterCard.addEventListener('click', handleCardClick);
   
   return templateClone;
 }
